@@ -69,3 +69,21 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.container div{
+  border: 1px;
+  border-color: #000000;
+  border-style: solid;
+}
+
+textarea{
+  width: 100%;
+}
+
+button{
+  width: 100%;
+}
+
+body{
+  background-color: azure;
+}
