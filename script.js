@@ -27,25 +27,31 @@ console.log($('.container').children().eq(1).children().eq(0))
 
 function colorCode(){
 
+    let workDayTimesMilitary = ["6.00", "7.00,"
+    , '8.00', '9.00', '10.00', '11.00', '12.00'
+    , '13.00', '14.00', '15.00', '16.00', '17.00', ];
+
     for(i=0;i<workDayTimes.length;i++){
 
-        var thisHour = moment().format('h');
-        console.log(thisHour); 
-        console.log(thisHour==workDayTimes[i]);       
-        if(thisHour > workDayTimes[i]){
+        var thisHour = moment().format('H');
+
+        if(thisHour == workDayTimesMilitary[i]){
+            $('.container').children().eq(i).children().eq(1).children().css('background-color','red')
+            
+        }
+           
+        else if(thisHour < workDayTimesMilitary[i]){
             $('.container').children().eq(i).children().eq(1).children().css('background-color','grey')
 
         }
 
-        else if(thisHour == workDayTimes[i]){
-            $('.container').children().eq(i).children().eq(1).children().css('background-color','red')
-            
-        }
+       
 
-        else if(thisHour < workDayTimes[i]){
+        else if(thisHour > workDayTimesMilitary[i]){
             $('.container').children().eq(i).children().eq(1).children().css('background-color','green')
 
         }
+       console.log(thisHour > 18)
 
         
         
